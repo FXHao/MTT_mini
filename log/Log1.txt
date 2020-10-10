@@ -1,0 +1,112 @@
+Test Summarize:
+
+
+ID：0	Name：WakePhone	Args:[]
+Function: False
+Function Not Found
+
+
+ID：1	Name：CheckSplash	Args:[]
+Function: <bound method MyTalkingTom_Ad.checkSplash of <MyTalkingTom.MyTalkingTom_Ad object at 0x00000178DD457DD8>>
+
+Test Successed
+检测到原生开屏(图片)
+
+
+ID：2	Name：CheckBanner_LiviningRoom	Args:[]
+Function: <bound method MyTalkingTom_Ad.checkBanner_Livingroom of <MyTalkingTom.MyTalkingTom_Ad object at 0x00000178DD457DD8>>
+
+Test Successed
+TestPoint: CheckBanner_Livingroom_MainScreen
+检测到原生Banner(图片)
+TestPoint: CheckBanner_Livingroom_MiniGameSelectScreen
+检测到原生Banner(图片)
+TestPoint: CheckBanner_Livingroom_MiniGame No.0
+未显示Banner
+TestPoint: CheckBanner_Livingroom_MiniGame No.1
+检测到原生Banner(图片)
+TestPoint: CheckBanner_Livingroom_MiniGame No.2
+检测到原生Banner(图片)
+TestPoint: CheckBanner_Livingroom_MiniGame No.3
+未显示Banner
+TestPoint: CheckBanner_Livingroom_MiniGame No.4
+检测到原生Banner(图片)
+TestPoint: CheckBanner_Livingroom_MiniGame No.5
+未显示Banner
+TestPoint: CheckBanner_Livingroom_MiniGame No.6
+Game icon not found.
+TestPoint: CheckBanner_Livingroom_MiniGame No.7
+Game icon not found.
+TestPoint: CheckBanner_Livingroom_MiniGame No.8
+Game icon not found.
+TestPoint: CheckBanner_Livingroom_MiniGame No.9
+检测到原生Banner(图片)
+TestPoint: CheckBanner_Livingroom_MiniGame No.10
+未显示Banner
+TestPoint: CheckBanner_Livingroom_MiniGame No.11
+检测到原生Banner(图片)
+TestPoint: CheckBanner_Livingroom_MiniGame No.12
+未显示Banner
+TestPoint: CheckBanner_Livingroom_MiniGame No.13
+未显示Banner
+TestPoint: CheckBanner_Livingroom_MiniGame No.14
+未显示Banner
+
+
+ID：3	Name：CheckBanner_Kitchen	Args:[]
+Function: <bound method MyTalkingTom_Ad.checkBanner_Kitchen of <MyTalkingTom.MyTalkingTom_Ad object at 0x00000178DD457DD8>>
+Test Failed
+
+
+ID：4	Name：CheckBanner_Bathroom	Args:[]
+Function: <bound method MyTalkingTom_Ad.checkBanner_Bathroom of <MyTalkingTom.MyTalkingTom_Ad object at 0x00000178DD457DD8>>
+
+Test Successed
+TestPoint: CheckBanner_Bathroom_MainScreen
+检测到普通Banner(Poco)
+
+
+ID：5	Name：CheckBanner_Bedroom	Args:[]
+Function: <bound method MyTalkingTom_Ad.checkBanner_Bedroom of <MyTalkingTom.MyTalkingTom_Ad object at 0x00000178DD457DD8>>
+
+Test Successed
+TestPoint: CheckBanner_Bedroom_MainScreen
+检测到原生Banner(图片)
+
+
+ID：6	Name：CheckInterstitial	Args:[]
+Function: <bound method MyTalkingTom_Ad.checkInterstitial of <MyTalkingTom.MyTalkingTom_Ad object at 0x00000178DD457DD8>>
+
+Test Successed
+TestPoint: CheckInterstitial_GoToLivingroom
+TestPoint: CheckInterstitial_GoToKitchen
+TestPoint: CheckInterstitial_GoToBathroom
+TestPoint: CheckInterstitial_GoToBedroom
+TestPoint: CheckInterstitial_GoToLivingroom
+TestPoint: CheckInterstitial_GoToKitchen
+TestPoint: CheckInterstitial_GoToBathroom
+TestPoint: CheckInterstitial_GoToBedroom
+
+
+ID：7	Name：CheckVideo	Args:[]
+Function: <bound method MyTalkingTom_Ad.checkVideo of <MyTalkingTom.MyTalkingTom_Ad object at 0x00000178DD457DD8>>
+
+Test Successed
+TestPoint: CheckVideo
+TestPoint: CheckVideo_GiftBox
+检测到视频(图片)
+TestPoint: CheckVideo_Toy
+未成功播放视频nTestPoint: CheckVideo_SleepPotion
+未发现睡眠药水
+TestPoint: CheckVideo_Pay
+检测到视频(图片)
+Case FailedTestPoint: CheckVideo_Refrigerator
+Case Failed
+================================
+注: 失败的测试指流程执行失败
+Total Case: 8
+Succeed Case: 6
+Failed Case: 1
+Function Not Found Case: 1
+Other Case: 0
+================================

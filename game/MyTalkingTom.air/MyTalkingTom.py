@@ -12,26 +12,19 @@ logger.setLevel(logging.FATAL)
 # logging.basicConfig(filename='test.log', level=logging.ERROR)
 # logging.basicConfig(level=logging.ERROR, format='%(message)')
 
-from game.Game import Game
-from helper import exists_any, position_to_absolute
-import traceback
+
+from game.helper import exists_any
 
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
-
-import threading
-from multiprocessing import Process
-import time
 
 from game.Reporter import reporter
 
 
 
 class MyTalkingTom(object):
-    '''
-    游戏内容
-    '''
+
     def __init__(self):
         self.AppID = 'com.outfit7.mytalkingtom.vivo'
         self.poco = poco
@@ -100,7 +93,7 @@ class MyTalkingTom(object):
 
 
     '''==================== 检测开屏部分start ===================='''
-    # 检测普通开屏是否存在
+    # 检测普通开屏
     def check_OrdinarySplash_Exists(self):
         '''检测普通开屏是否存在'''
 

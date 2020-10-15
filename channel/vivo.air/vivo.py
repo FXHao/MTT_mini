@@ -5,7 +5,7 @@ from airtest.core.api import *
 _project_root = os.path.abspath(os.path.join(os.path.abspath(__file__), "../../..")) + "/"
 using(_project_root)
 from channel.Channel import Channel
-from helper import exists_any
+
 
 class vivo(Channel):
     

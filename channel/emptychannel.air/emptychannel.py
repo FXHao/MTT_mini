@@ -6,7 +6,7 @@ _project_root = os.path.abspath(os.path.join(os.path.abspath(__file__), "../../.
 auto_setup(__file__)
 using(_project_root)
 from channel.Channel import Channel
-from helper import exists_any
+from game.helper import exists_any
 
 class emptychannel(Channel):
     

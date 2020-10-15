@@ -8,6 +8,9 @@ from poco.proxy import UIObjectProxy
 from airtest.core.android.minitouch import *
 from airtest.core.android.rotation import XYTransformer
 
+from airtest.core.settings import Settings as ST
+ST.FIND_TIMEOUT_TMP = 3 # exists等待的时间
+
 # 检测是否存在图片或poco
 def exists_any(obj):
     

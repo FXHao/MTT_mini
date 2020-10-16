@@ -14,11 +14,8 @@ logger.setLevel(logging.FATAL)
 
 
 from game.helper import exists_any
-
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
-
 from game.Reporter import reporter
 
 
@@ -47,10 +44,13 @@ class MyTalkingTom(object):
             'banner_p_close':self.poco(nameMatches='(.*)id/hiad_banner_close_button'),
             'interstitial_p': None,
             'interstitial_p_close': None,
+            'interstitial_y': None,
             'interstitial_video': self.poco(nameMatches='(.*)id/interstitial_content_view'),
             'interstitial_video_close': self.poco(nameMatches='(.*)id/interstitial_close'),
             'video': self.poco(nameMatches='(.*)id/hiad_reward_view'),
             'video_close': self.poco(nameMatches='(.*)id/reward_close'),
+            'isOrdinarySplash': True,
+            'isNativeSplash': True,
         }
 
         self.vivo = {
@@ -197,6 +197,7 @@ class MyTalkingTom(object):
 
 
 
+
     '''==================== 检测开屏部分START ===================='''
     # 检测普通开屏
     def check_OrdinarySplash_Exists(self):
@@ -221,7 +222,7 @@ class MyTalkingTom(object):
         return False
 
     # 检测开屏广告
-    def check_Splash_Exists(self, Ordinary=True, Native=True):
+    def check_Splash_Exists(self):
         '''
         检测开屏广告
         Ordinary：是否需要重复检测普通开屏（重复20次），默认开启
@@ -229,6 +230,10 @@ class MyTalkingTom(object):
         '''
         OrdinarySplash = self.check_OrdinarySplash_Exists()
         NativeSplash = self.check_NativeSplash_Exists()
+
+        poco_dict = self.get_channel(channel=self.channel)
+        Ordinary = poco_dict['isOrdinarySplash']
+        Native = poco_dict['isNativeSplash']
 
         if (Ordinary == True):
             for i in range(20):
@@ -256,6 +261,7 @@ class MyTalkingTom(object):
 
 
 
+
     '''==================== 检测插屏部分START ===================='''
     # 检测普通插屏
     def check_OrdinaryInterstitial_Exists(self, scenes):
@@ -266,20 +272,28 @@ class MyTalkingTom(object):
         if OrdinaryInterstitial_poco is None:
             print("{}渠道无普通插屏".format(self.channel))
             return False
+
         po = poco_dict['interstitial_p']
         if (po == False):
             return False
         self.Reporter_w.write_excel(scenes['interstitial_p'], self.reporter_msg)
         self.snapshot_mag()
         po_close = poco_dict['interstitial_p_close']
-        if po_close == False:
+        if po_close != False:
+            po_close.click()
+        else:
             keyevent('BACK')
-        po_close.click()
         return True
 
-    # 检测原生开屏
+    # 检测原生插屏
     def check_NativeInterstitial_Exists(self, scenes):
         '''检测原生插屏'''
+        poco_dict = self.get_channel(channel=self.channel)
+        p = poco_dict['interstitial_y']
+        if p is None:
+            print("{}渠道无原生插屏".format(self.channel))
+            return False
+
         pos = exists_any(self.nativeInterstitial)
         if (pos == False):
             return False
@@ -288,18 +302,19 @@ class MyTalkingTom(object):
         pos_close = exists_any(self.nativeInterstitialClose)
         if pos == False:
             keyevent("BACK") # 虽然不管用，但只能点点看~
-        touch(pos_close)
+        else:
+            touch(pos_close)
         return True
 
     # 检测视频插屏
     def check_VideoInterstitial_Exists(self, scenes):
         '''检测视频插屏'''
-
         poco_dict = self.get_channel(channel=self.channel)
         VideoInterstitial_poco = poco_dict['interstitial_video']
         if VideoInterstitial_poco is None:
             print("{}渠道无视频插屏".format(self.channel))
             return False
+
         po = poco_dict['interstitial_video']
         if (po == False):
             return False
@@ -308,7 +323,8 @@ class MyTalkingTom(object):
         po_close = poco_dict['interstitial_video_close']
         if (po_close == False):
             keyevent('BACK')
-        po_close.click()
+        else:
+            po_close.click()
         return True
 
     # 检测插屏广告
@@ -316,10 +332,13 @@ class MyTalkingTom(object):
         '''检测插屏'''
         scenes = self.get_Scenes(self.scenes)
 
-        self.check_OrdinaryInterstitial_Exists(scenes)
-        self.check_NativeInterstitial_Exists(scenes)
-        self.check_VideoInterstitial_Exists(scenes)
+        inter_p = self.check_OrdinaryInterstitial_Exists(scenes)
+        inter_y = self.check_NativeInterstitial_Exists(scenes)
+        iner_v = self.check_VideoInterstitial_Exists(scenes)
 
+        if (inter_y or inter_p or iner_v) == False:
+            return False
+        return True
 
     '''==================== 检测插屏部分END ===================='''
 

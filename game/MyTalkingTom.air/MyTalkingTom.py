@@ -28,39 +28,106 @@ class MyTalkingTom(object):
     def __init__(self):
         self.AppID = 'com.outfit7.mytalkingtom.vivo'
         self.poco = poco
+        self.scenes = 'Livingroom'
+        self.channel = '华为'
+        self.reporter_msg = '存在'
+
         self.mag_num = 0
         self.mag_path = '..//Reporter//mag'
         self.Reporter_w = reporter.Reporter_excel()
 
-        self.nativeBanner = []
-        self.nativeSplash = []
-        self.nativeInterstitial = []
-        self.nativeInterstitialClose = []
-
-        self.huawei = {}
-        self.vivo = {}
         self.init_imglist()
         self.init_poco()
+        self.init_Scenes()
         # self.num = 0
 
     def init_poco(self):
         self.huawei = {
-            'banner_p': poco(nameMatches='(.*)id/n1_t2_img'),
-            'banner_p_close':poco(nameMatches='(.*)id/hiad_banner_close_button'),
-            'interstitial_video': poco(nameMatches='(.*)id/interstitial_content_view'),
-            'interstitial_video_close': poco(nameMatches='(.*)id/interstitial_close'),
-            'video': poco(nameMatches='(.*)id/hiad_reward_view'),
-            'video_close': poco(nameMatches='(.*)id/reward_close'),
+            'banner_p': self.poco(nameMatches='(.*)id/n1_t2_img'),
+            'banner_p_close':self.poco(nameMatches='(.*)id/hiad_banner_close_button'),
+            'interstitial_p': None,
+            'interstitial_p_close': None,
+            'interstitial_video': self.poco(nameMatches='(.*)id/interstitial_content_view'),
+            'interstitial_video_close': self.poco(nameMatches='(.*)id/interstitial_close'),
+            'video': self.poco(nameMatches='(.*)id/hiad_reward_view'),
+            'video_close': self.poco(nameMatches='(.*)id/reward_close'),
         }
 
         self.vivo = {
-            'banner_p': poco(nameMatches='(.*)id/n1_t2_img'),
-            'banner_p_close': poco(nameMatches='(.*)id/n1_t2_img'),
-            'interstitial_p': poco(nameMatches='(.*)id/n1_t2_img'),
-            'interstitial_p_close': poco(nameMatches='(.*)id/n1_t2_img'),
-            'video': poco(nameMatches='(.*)id/n1_t2_img'),
-            'video_close': poco(nameMatches='(.*)id/n1_t2_img'),
+            'banner_p': self.poco(nameMatches='(.*)id/n1_t2_img'),
+            'banner_p_close': self.poco(nameMatches='(.*)id/n1_t2_img'),
+            'interstitial_p': self.poco(nameMatches='(.*)id/n1_t2_img'),
+            'interstitial_p_close': self.poco(nameMatches='(.*)id/n1_t2_img'),
+            'video': self.poco(nameMatches='(.*)id/n1_t2_img'),
+            'video_close': self.poco(nameMatches='(.*)id/n1_t2_img'),
         }
+
+    def init_Scenes(self):
+        self.Livingroom = {
+            'banner_p': 'A10',
+            'banner_y': 'B10',
+            'interstitial_p': 'C10',
+            'interstitial_y': 'D10',
+            'interstitial_v': 'E10',
+            'video': 'F10'
+        }
+
+        self.Kitchen = {
+            'banner_p': 'A14',
+            'banner_y': 'B14',
+            'interstitial_p': 'C14',
+            'interstitial_y': 'D14',
+            'interstitial_v': 'E14',
+            'video': 'F14'
+        }
+
+        self.Bathroom = {
+            'banner_p': 'A18',
+            'banner_y': 'B18',
+            'interstitial_p': 'C18',
+            'interstitial_y': 'D18',
+            'interstitial_v': 'E18',
+            'video': 'F18'
+        }
+
+        self.Bedroom = {
+            'banner_p': 'A22',
+            'banner_y': 'B22',
+            'interstitial_p': 'C22',
+            'interstitial_y': 'D22',
+            'interstitial_v': 'E22',
+            'video': 'F22'
+        }
+
+        self.Paypage = {
+            'banner_p': 'A26',
+            'banner_y': 'B26',
+            'interstitial_p': 'C26',
+            'interstitial_y': 'D26',
+            'interstitial_v': 'E26',
+            'video': 'F26'
+        }
+
+    def get_Scenes(self, scenes=None):
+        ''''''
+        scenes_dict = {
+            'Livingroom': self.Livingroom,
+            'Kitchen': self.Kitchen,
+            'Bathroom': self.Bathroom,
+            'Bedroom': self.Bedroom,
+            'Paypage': self.Paypage
+        }
+        return scenes_dict[scenes]
+
+    def get_channel(self, channel=None):
+        '''返回对应渠道poco'''
+        channel_d = {
+            '华为': self.huawei,
+            'vivo': self.vivo
+        }
+
+        return channel_d[channel]
+
 
     def init_imglist(self, Point=None):
         self.nativeBanner = [
@@ -90,9 +157,47 @@ class MyTalkingTom(object):
             Template(r"tpl1567911842071.png", record_pos=(0.031, 0.77), resolution=(1080, 1920))
         ]
 
+    '''==================== 检测banner部分START ===================='''
+    # 检测banner
+    def check_banner_Exists(self):
+        '''检测banner'''
+        # po = poco('com.outfit7.mytalkingtomfree:id/activead').exists() # 普通banner
+        self.banner_p = 0
+        self.banner_y = 0
+        sleep(3)
+        print("【开始检测banner】")
+
+        for i in range(1, 3):
+            po = poco(nameMatches='(.*)id/n1_t2_img').wait(15).exists()
+            if (po == False):
+                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
+                continue
+            else:
+                print("检测到普通banner")
+                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
+                self.banner_p += 1
+                close = poco(nameMatches='(.*)id/n1_t2_btn')
+                sleep(5)
+                if (close.wait(5).exists() != False):
+                    close.click()
+                    print("普通banner关闭成功")
+                    continue
+        for i in range(1, 3):
+            pos = exists_any(self.nativeBanner)
+            if (pos == False):
+                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
+                continue
+            else:
+                print("检测到原生banner")
+                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
+                self.banner_y += 1
+                # todo: 关闭原生banner
+
+    '''==================== 检测banner部分END ===================='''
 
 
-    '''==================== 检测开屏部分start ===================='''
+
+    '''==================== 检测开屏部分START ===================='''
     # 检测普通开屏
     def check_OrdinarySplash_Exists(self):
         '''检测普通开屏是否存在'''
@@ -115,6 +220,7 @@ class MyTalkingTom(object):
             return True
         return False
 
+    # 检测开屏广告
     def check_Splash_Exists(self, Ordinary=True, Native=True):
         '''
         检测开屏广告
@@ -149,6 +255,73 @@ class MyTalkingTom(object):
     '''==================== 检测开屏部分END ===================='''
 
 
+
+    '''==================== 检测插屏部分START ===================='''
+    # 检测普通插屏
+    def check_OrdinaryInterstitial_Exists(self, scenes):
+        '''检测普通插屏'''
+        # scenes = self.get_Scenes(scenes='Livingroom')
+        poco_dict = self.get_channel(channel=self.channel)
+        OrdinaryInterstitial_poco = poco_dict['interstitial_p']
+        if OrdinaryInterstitial_poco is None:
+            print("{}渠道无普通插屏".format(self.channel))
+            return False
+        po = poco_dict['interstitial_p']
+        if (po == False):
+            return False
+        self.Reporter_w.write_excel(scenes['interstitial_p'], self.reporter_msg)
+        self.snapshot_mag()
+        po_close = poco_dict['interstitial_p_close']
+        if po_close == False:
+            keyevent('BACK')
+        po_close.click()
+        return True
+
+    # 检测原生开屏
+    def check_NativeInterstitial_Exists(self, scenes):
+        '''检测原生插屏'''
+        pos = exists_any(self.nativeInterstitial)
+        if (pos == False):
+            return False
+        self.Reporter_w.write_excel(scenes['interstitial_y'], self.reporter_msg)
+        self.snapshot_mag()
+        pos_close = exists_any(self.nativeInterstitialClose)
+        if pos == False:
+            keyevent("BACK") # 虽然不管用，但只能点点看~
+        touch(pos_close)
+        return True
+
+    # 检测视频插屏
+    def check_VideoInterstitial_Exists(self, scenes):
+        '''检测视频插屏'''
+
+        poco_dict = self.get_channel(channel=self.channel)
+        VideoInterstitial_poco = poco_dict['interstitial_video']
+        if VideoInterstitial_poco is None:
+            print("{}渠道无视频插屏".format(self.channel))
+            return False
+        po = poco_dict['interstitial_video']
+        if (po == False):
+            return False
+        self.Reporter_w.write_excel(scenes['interstitial_v'], self.reporter_msg)
+        self.snapshot_mag()
+        po_close = poco_dict['interstitial_video_close']
+        if (po_close == False):
+            keyevent('BACK')
+        po_close.click()
+        return True
+
+    # 检测插屏广告
+    def check_Interstitial_Exists(self):
+        '''检测插屏'''
+        scenes = self.get_Scenes(self.scenes)
+
+        self.check_OrdinaryInterstitial_Exists(scenes)
+        self.check_NativeInterstitial_Exists(scenes)
+        self.check_VideoInterstitial_Exists(scenes)
+
+
+    '''==================== 检测插屏部分END ===================='''
 
 
     # 截图
@@ -430,49 +603,6 @@ class MyTalkingTom(object):
 
 
 
-    '''==================== 广告内容部分 ===================='''
-
-
-    def check_banner_Exists(self):
-        '''检测banner'''
-        # po = poco('com.outfit7.mytalkingtomfree:id/activead').exists() # 普通banner
-        self.banner_p = 0
-        self.banner_y = 0
-        sleep(3)
-        print("【开始检测banner】")
-
-        for i in range(1, 3):
-            po = poco(nameMatches='(.*)id/n1_t2_img').wait(15).exists()
-            if (po == False):
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                continue
-            else:
-                print("检测到普通banner")
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                self.banner_p += 1
-                close = poco(nameMatches='(.*)id/n1_t2_btn')
-                sleep(5)
-                if (close.wait(5).exists() != False):
-                    close.click()
-                    print("普通banner关闭成功")
-                    continue
-        for i in range(1, 3):
-            pos = exists_any(self.nativeBanner)
-            if (pos == False):
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                continue
-            else:
-                print("检测到原生banner")
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                self.banner_y += 1
-                # todo: 关闭原生banner
-
-    # 检测插屏
-    def check_interstitial_Exists(self):
-        '''检测插屏'''
-        pass
-
-
 
     def main(self):
         '''主程序逻辑'''
@@ -497,11 +627,10 @@ class MyTalkingTom(object):
 
 
 
-
-
 if __name__ == '__main__':
     MTT = MyTalkingTom()
     # MTT.check_banner()
-    MTT.start_app()
+    # MTT.start_app()
     # MTT.main()
-    MTT.check_Splash_Exists(Ordinary=False)
+    # MTT.check_Splash_Exists(Ordinary=False)
+    MTT.check_VideoInterstitial_Exists()

@@ -14,35 +14,7 @@ class Reporter_excel(object):
         self.title = '广告测试'
         self.isFirstOpen = True
 
-    # def create_excel(self):
-    #     self.book = openpyxl.Workbook()
-    #     self.sheet = self.book.active
-    #
-    #     self.sheet.title = self.title
-    #     self.sheet['A1'] = '渠道'
-    #     self.sheet['A2'] = '游戏'
-    #
-    #     self.sheet['A4'] = '客厅'
-    #     self.sheet['A5'] = '普通开屏'
-    #     self.sheet['B5'] = '原生开屏'
-    #     self.sheet['C5'] = '普通banner'
-    #     self.sheet['D5'] = '原生banner'
-    #     self.sheet['E5'] = '普通插屏'
-    #     self.sheet['F5'] = '原生插屏'
-    #     self.sheet['G5'] = '视频插屏'
-    #     self.sheet['H5'] = '视频'
-    #
-    #     # self.sheet[]
-    #
-    #     self.book.save(self.path)
 
-
-        # self.sheet['A4'] = ''
-        # self.sheet['A4'] = ''
-        # self.sheet['A4'] = ''
-        # self.sheet['A4'] = ''
-        # self.sheet['A4'] = ''
-        # self.sheet['A4'] = ''
 
     def read_excel(self):
         wb = openpyxl.load_workbook(self.template_path)

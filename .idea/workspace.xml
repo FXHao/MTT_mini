@@ -16,9 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc04b1e8-aa05-4b1a-81b3-6e49651614da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/中心主题.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/Reporter/report_template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/game/Reporter/report_template.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +204,7 @@
       <workItem from="1602490424857" duration="34141000" />
       <workItem from="1602658749395" duration="6769000" />
       <workItem from="1602666207166" duration="47246000" />
+      <workItem from="1602905824343" duration="4728000" />
     </task>
     <servers />
   </component>

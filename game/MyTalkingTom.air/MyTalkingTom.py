@@ -42,6 +42,7 @@ class MyTalkingTom(object):
         self.huawei = {
             'banner_p': self.poco(nameMatches='(.*)id/n1_t2_img'),
             'banner_p_close':self.poco(nameMatches='(.*)id/hiad_banner_close_button'),
+            'banner_y': None,
             'interstitial_p': None,
             'interstitial_p_close': None,
             'interstitial_y': None,
@@ -137,6 +138,10 @@ class MyTalkingTom(object):
             Template(r"tpl1568797924855.png", rgb=True, record_pos=(-0.374, -0.819), resolution=(1080, 1920)),
         ]
 
+        self.nativeBannerClose = [
+
+        ]
+
         self.nativeSplash = [
             Template(r"tpl1602754161372.png", record_pos=(-0.006, 0.656), resolution=(1200, 2640)),
             Template(r"tpl1569480920892.png", record_pos=(0.043, -0.35), resolution=(1080, 2244))
@@ -158,40 +163,63 @@ class MyTalkingTom(object):
         ]
 
     '''==================== 检测banner部分START ===================='''
+    # 检测普通banner
+    def check_OrdinaryBanner_Exists(self, scenes):
+        '''检测普通banner'''
+        poco_dict = self.get_channel(channel=self.channel)
+        # OrdinaryBanner_poco = poco_dict['banner_p']
+        # if OrdinaryBanner_poco is None:
+        #     print("{}渠道无普通banner".format(self.channel))
+        #     return False
+
+        po = poco_dict['banner_p']
+        if (po == False):
+            return False
+        self.Reporter_w.write_excel(scenes['banner_p'], self.reporter_msg)
+        self.snapshot_mag()
+        po_close = poco_dict['banner_p_close']
+        if (po_close != False):
+            po_close.click()
+        return True
+
+    # 检测原生banner
+    def check_NativeBanner_Exists(self, scenes):
+        '''检测原生banner'''
+        # poco_dict = self.get_channel(channel=self.channel)
+        # NativeBanner_poco = poco_dict['banner_y']
+        # if NativeBanner_poco is None:
+        #     print("{}渠道无原生banner".format(self.channel))
+        #     return False
+
+        pos = exists_any(self.nativeBanner)
+        if (pos == False):
+            return False
+        self.Reporter_w.write_excel(scenes['banner_y'], self.reporter_msg)
+        pos_close = exists_any(self.nativeBannerClose)
+        if (pos_close != False):
+            touch(pos_close)
+        return True
+
     # 检测banner
     def check_banner_Exists(self):
         '''检测banner'''
-        # po = poco('com.outfit7.mytalkingtomfree:id/activead').exists() # 普通banner
-        self.banner_p = 0
-        self.banner_y = 0
-        sleep(3)
         print("【开始检测banner】")
+        scenes = self.get_Scenes(self.scenes)
+        poco_dict = self.get_channel(channel=self.channel)
+        NativeBanner_poco = poco_dict['banner_y']
+        OrdinaryBanner_poco = poco_dict['banner_p']
+        for i in range(4):
+            if OrdinaryBanner_poco is None:
+                print("{}渠道无普通banner".format(self.channel))
+            else:
+                self.check_OrdinaryBanner_Exists(scenes)
 
-        for i in range(1, 3):
-            po = poco(nameMatches='(.*)id/n1_t2_img').wait(15).exists()
-            if (po == False):
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                continue
+            if NativeBanner_poco is None:
+                print("{}渠道无原生banner".format(self.channel))
             else:
-                print("检测到普通banner")
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                self.banner_p += 1
-                close = poco(nameMatches='(.*)id/n1_t2_btn')
-                sleep(5)
-                if (close.wait(5).exists() != False):
-                    close.click()
-                    print("普通banner关闭成功")
-                    continue
-        for i in range(1, 3):
-            pos = exists_any(self.nativeBanner)
-            if (pos == False):
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                continue
-            else:
-                print("检测到原生banner")
-                snapshot(filename='../../log/mag/banner_p_{}.jpg'.format(i))
-                self.banner_y += 1
-                # todo: 关闭原生banner
+                self.check_NativeBanner_Exists(scenes)
+
+
 
     '''==================== 检测banner部分END ===================='''
 
@@ -228,6 +256,7 @@ class MyTalkingTom(object):
         Ordinary：是否需要重复检测普通开屏（重复20次），默认开启
         Native：是否需要重复检测原生开屏，默认开启
         '''
+        print("【开始检测开屏广告】")
         OrdinarySplash = self.check_OrdinarySplash_Exists()
         NativeSplash = self.check_NativeSplash_Exists()
 

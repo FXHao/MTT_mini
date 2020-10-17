@@ -23,9 +23,9 @@ from game.Reporter import reporter
 class MyTalkingTom(object):
 
     def __init__(self):
-        self.AppID = 'com.outfit7.mytalkingtom.vivo'
+        self.AppID = 'com.outfit7.mytalkingtomfree.HUAWEI'
         self.poco = poco
-        self.scenes = 'Livingroom'
+        self.scenes = None
         self.channel = '华为'
         self.reporter_msg = '存在'
 
@@ -51,7 +51,7 @@ class MyTalkingTom(object):
             'video': self.poco(nameMatches='(.*)id/hiad_reward_view'),
             'video_close': self.poco(nameMatches='(.*)id/reward_close'),
             'isOrdinarySplash': True,
-            'isNativeSplash': True,
+            'isNativeSplash': False,
         }
 
         self.vivo = {
@@ -164,7 +164,7 @@ class MyTalkingTom(object):
 
     '''==================== 检测banner部分START ===================='''
     # 检测普通banner
-    def check_OrdinaryBanner_Exists(self, scenes):
+    def isOrdinaryBannerExists(self, scenes):
         '''检测普通banner'''
         poco_dict = self.get_channel(channel=self.channel)
         # OrdinaryBanner_poco = poco_dict['banner_p']
@@ -176,6 +176,7 @@ class MyTalkingTom(object):
         if (po == False):
             return False
         self.Reporter_w.write_excel(scenes['banner_p'], self.reporter_msg)
+        print("检测到普通banner")
         self.snapshot_mag()
         po_close = exists_any(poco_dict['banner_p_close'])
         if (po_close != False):
@@ -183,7 +184,7 @@ class MyTalkingTom(object):
         return True
 
     # 检测原生banner
-    def check_NativeBanner_Exists(self, scenes):
+    def isNativeBannerExists(self, scenes):
         '''检测原生banner'''
         # poco_dict = self.get_channel(channel=self.channel)
         # NativeBanner_poco = poco_dict['banner_y']
@@ -195,13 +196,15 @@ class MyTalkingTom(object):
         if (pos == False):
             return False
         self.Reporter_w.write_excel(scenes['banner_y'], self.reporter_msg)
+        print("检测到原生banner")
+        self.snapshot_mag()
         pos_close = exists_any(self.nativeBannerClose)
         if (pos_close != False):
             touch(pos_close)
         return True
 
     # 检测banner
-    def check_Banner_Exists(self):
+    def isBannerExists(self):
         '''检测banner'''
         print("【开始检测banner】")
         scenes = self.get_Scenes(self.scenes)
@@ -212,49 +215,50 @@ class MyTalkingTom(object):
             if OrdinaryBanner_poco is None:
                 print("{}渠道无普通banner".format(self.channel))
             else:
-                self.check_OrdinaryBanner_Exists(scenes)
+                self.isOrdinaryBannerExists(scenes)
 
             if NativeBanner_poco is None:
                 print("{}渠道无原生banner".format(self.channel))
             else:
-                self.check_NativeBanner_Exists(scenes)
+                self.isNativeBannerExists(scenes)
 
     '''==================== 检测banner部分END ===================='''
 
 
     '''==================== 检测开屏广告部分START ===================='''
     # 检测普通开屏
-    def check_OrdinarySplash_Exists(self):
+    def isOrdinarySplashExists(self):
         '''检测普通开屏是否存在'''
 
         pos = exists_any(self.OrdinarySplash)
         if (pos != False):
             self.Reporter_w.write_excel('A6', '存在')
+            print("检测到普通开屏")
             self.snapshot_mag()
             return True
         return False
 
     # 检测原生开屏
-    def check_NativeSplash_Exists(self):
+    def isNativeSplashExists(self):
         '''检测原生开屏是否存在'''
-
         pos1 = exists_any(self.nativeSplash)
         if (pos1 != False):
             self.Reporter_w.write_excel('B6', '存在')
+            print("检测到原生开屏")
             self.snapshot_mag()
             return True
         return False
 
     # 检测开屏广告
-    def check_Splash_Exists(self):
+    def isSplashExists(self):
         '''
         检测开屏广告
         Ordinary：是否需要重复检测普通开屏（重复20次），默认开启
         Native：是否需要重复检测原生开屏，默认开启
         '''
         print("【开始检测开屏广告】")
-        OrdinarySplash = self.check_OrdinarySplash_Exists()
-        NativeSplash = self.check_NativeSplash_Exists()
+        OrdinarySplash = self.isOrdinarySplashExists()
+        NativeSplash = self.isNativeSplashExists()
 
         poco_dict = self.get_channel(channel=self.channel)
         Ordinary = poco_dict['isOrdinarySplash']
@@ -269,25 +273,25 @@ class MyTalkingTom(object):
                 self.stop_app()
                 sleep(2)
                 self.start_app()
-                OrdinarySplash = self.check_OrdinarySplash_Exists()
+                OrdinarySplash = self.isOrdinarySplashExists()
 
         if (Native == True):
             for i in range(20):
                 if (NativeSplash == True):
                     break
                 sleep(5)
-                print('未检测到普通开屏，准备第{}次重启检测'.format(i))
+                print('未检测到原生开屏，准备第{}次重启检测'.format(i))
                 self.stop_app()
                 sleep(2)
                 self.start_app()
-                NativeSplash = self.check_NativeSplash_Exists()
+                NativeSplash = self.isNativeSplashExists()
 
     '''==================== 检测开屏广告部分END ===================='''
 
 
     '''==================== 检测插屏广告部分START ===================='''
     # 检测普通插屏
-    def check_OrdinaryInterstitial_Exists(self, scenes):
+    def isOrdinaryInterstitialExists(self, scenes):
         '''检测普通插屏'''
         # scenes = self.get_Scenes(scenes='Livingroom')
         poco_dict = self.get_channel(channel=self.channel)
@@ -300,6 +304,7 @@ class MyTalkingTom(object):
         if (po == False):
             return False
         self.Reporter_w.write_excel(scenes['interstitial_p'], self.reporter_msg)
+        print("检测到普通插屏")
         self.snapshot_mag()
         po_close = exists_any(poco_dict['interstitial_p_close'])
         if po_close != False:
@@ -309,7 +314,7 @@ class MyTalkingTom(object):
         return True
 
     # 检测原生插屏
-    def check_NativeInterstitial_Exists(self, scenes):
+    def isNativeInterstitialExists(self, scenes):
         '''检测原生插屏'''
         poco_dict = self.get_channel(channel=self.channel)
         p = poco_dict['interstitial_y']
@@ -321,6 +326,7 @@ class MyTalkingTom(object):
         if (pos == False):
             return False
         self.Reporter_w.write_excel(scenes['interstitial_y'], self.reporter_msg)
+        print("检测到原生插屏")
         self.snapshot_mag()
         pos_close = exists_any(self.nativeInterstitialClose)
         if pos == False:
@@ -330,7 +336,7 @@ class MyTalkingTom(object):
         return True
 
     # 检测视频插屏
-    def check_VideoInterstitial_Exists(self, scenes):
+    def isVideoInterstitialExists(self, scenes):
         '''检测视频插屏'''
         poco_dict = self.get_channel(channel=self.channel)
         VideoInterstitial_poco = poco_dict['interstitial_video']
@@ -342,6 +348,7 @@ class MyTalkingTom(object):
         if (po == False):
             return False
         self.Reporter_w.write_excel(scenes['interstitial_v'], self.reporter_msg)
+        print("检测到视频插屏")
         self.snapshot_mag()
         po_close = exists_any(poco_dict['interstitial_video_close'])
         if (po_close == False):
@@ -351,14 +358,14 @@ class MyTalkingTom(object):
         return True
 
     # 检测插屏广告
-    def check_Interstitial_Exists(self):
+    def isInterstitialExists(self):
         '''检测插屏'''
         print("【开始检测插屏广告】")
         scenes = self.get_Scenes(self.scenes)
 
-        inter_p = self.check_OrdinaryInterstitial_Exists(scenes)
-        inter_y = self.check_NativeInterstitial_Exists(scenes)
-        iner_v = self.check_VideoInterstitial_Exists(scenes)
+        inter_p = self.isOrdinaryInterstitialExists(scenes)
+        inter_y = self.isNativeInterstitialExists(scenes)
+        iner_v = self.isVideoInterstitialExists(scenes)
 
         if (inter_y or inter_p or iner_v) == False:
             return False
@@ -369,7 +376,7 @@ class MyTalkingTom(object):
 
     '''==================== 检测视频广告部分START ===================='''
     # 检测视频广告
-    def check_Video_Exists(self):
+    def isVideoExists(self):
         '''检测视频广告'''
         print('【开始检测视频广告】')
         poco_dict = self.get_channel(channel=self.channel)
@@ -401,18 +408,17 @@ class MyTalkingTom(object):
     '''==================== 游戏基础操作 ===================='''
     # 游戏基础操作
     def start_app(self):
-        start_app(self.AppID)
         print("正在启动游戏....")
+        start_app(self.AppID)
         # sleep(2)
 
     def stop_app(self):
-        stop_app(self.AppID)
         print('正在关闭游戏...')
-        sleep(5)
+        stop_app(self.AppID)
 
     def clear_app(self):
-        clear_app(self.AppID)
         print('正在清除数据...')
+        clear_app(self.AppID)
         sleep(5)
 
     def wake_phone(self):
@@ -431,11 +437,11 @@ class MyTalkingTom(object):
             touch(pos)
 
     # 跳过权限
-    def skip_permission(self, times=5):
+    def skip_permission(self, times=3):
         '''跳过权限'''
         print('跳过权限')
-        sleep(3)
         poco = self.poco
+        sleep(2)
         for i in range(0, times):
             if poco(text="始终允许").exists():
                 poco(text="始终允许").click()
@@ -529,10 +535,17 @@ class MyTalkingTom(object):
         sleep(1)
         touch(Template(r"tpl1567501771358.png", rgb=True, record_pos=(0.001, 0.401), resolution=(1080, 2248)))
         sleep(3)
-        pos1 = exists_any(Template(r"tpl1602572841304.png", record_pos=(0.003, 0.183), resolution=(1200, 2640)))
-        if (pos1 != False):
-            # touch(Template(r"tpl1602492999405.png", record_pos=(0.36, -0.879), resolution=(1200, 2640)))
-            touch(pos1)
+        pos1 = exists_any([
+            Template(r"tpl1602572841304.png", record_pos=(0.003, 0.183), resolution=(1200, 2640)),
+            Template(r"tpl1602931632398.png", record_pos=(0.357, -0.859), resolution=(1080, 2310)),
+        ])
+        for i in range(2):
+            if (pos1 != False):
+                # touch(Template(r"tpl1602492999405.png", record_pos=(0.36, -0.879), resolution=(1200, 2640)))
+                touch(pos1)
+            sleep(3)
+            self.skip_luying()
+            sleep(3)
 
     # 检测是否在主界面
     def check_isMainPage(self):
@@ -565,49 +578,59 @@ class MyTalkingTom(object):
                 self.skip_daily_challenge()
                 if (self.check_isMainPage() == False):
                     # TODO：检测插屏广告视频广告
-                    self.check_Interstitial_Exists()
+                    self.isInterstitialExists()
                     if (self.check_isMainPage() == False):
                         keyevent("BACK")
                         if (self.check_isMainPage() == False):
-                            assert_equal(True, False, "未知当前界面位置，将重启游戏")
-                            print("未知当前界面位置，将重启游戏")
-                            self.main()
+                            keyevent("BACK")
+                            if (self.check_isMainPage() == False):
+                                assert_equal(True, False, "未知当前界面位置，将重启游戏")
+                                print("未知当前界面位置，将重启游戏")
+                                # self.main()
+                                # TODO：不知位置后的操作
 
     # 前往客厅
     def goToLivingroom(self):
         print("前往客厅")
         sleep(3)
-        pos = exists_any([
-            Template(r"tpl1567667429838.png", record_pos=(-0.203, 0.922), resolution=(1080, 2248)),
-            Template(r"tpl1567667416052.png", record_pos=(-0.194, 0.92), resolution=(1080, 2248)),
-            Template(r"tpl1567589317467.png", record_pos=(-0.196, 0.925), resolution=(1080, 2248)),
-            Template(r"tpl1567589396053.png", record_pos=(-0.198, 0.925), resolution=(1080, 2248)),
-            Template(r"tpl1596538199151.png", record_pos=(-0.194, 0.948), resolution=(1080, 2340))
-        ])
-        if (pos == False):
-            assert_equal(True, False, "goToLivingroom() 客厅按钮未找到.")
-            return
-        for i in range(0, 5):
-            touch(pos)
-            self.isNoMainPage_do()
+        for i in range(4):
+            pos = exists_any([
+                Template(r"tpl1567667429838.png", record_pos=(-0.203, 0.922), resolution=(1080, 2248)),
+                Template(r"tpl1567667416052.png", record_pos=(-0.194, 0.92), resolution=(1080, 2248)),
+                Template(r"tpl1567589317467.png", record_pos=(-0.196, 0.925), resolution=(1080, 2248)),
+                Template(r"tpl1567589396053.png", record_pos=(-0.198, 0.925), resolution=(1080, 2248)),
+                Template(r"tpl1596538199151.png", record_pos=(-0.194, 0.948), resolution=(1080, 2340))
+            ])
+            if (pos == False):
+                assert_equal(True, False, "goToLivingroom() 客厅按钮未找到.")
+                self.isNoMainPage_do()
+            for j in range(0, 5):
+                touch(pos)
+                self.scenes = 'Livingroom'
+                sleep(0.5)
+                self.isNoMainPage_do()
+                self.isBannerExists()
 
     # 前往厨房
     def goToKitchen(self):
         sleep(3)
-        pos = exists_any([
-            Template(r"tpl1567577528299.png", record_pos=(0.0, 0.919), resolution=(1080, 2248)),
-            Template(r"tpl1567667454466.png", record_pos=(0.005, 0.92), resolution=(1080, 2248)),
-            Template(r"tpl1597905990964.png", record_pos=(0.002, 0.923), resolution=(1080, 2280)),
-            Template(r"tpl1567589340484.png", record_pos=(-0.001, 0.923), resolution=(1080, 2248)),
-            Template(r"tpl1567589388744.png", record_pos=(-0.001, 0.924), resolution=(1080, 2248))
-        ])
-        if (pos == False):
-            assert_equal(True, False, "goToKitchen() 厨房按钮未找到.")
-            return
-        for i in range(0, 10):
-            touch(pos)
-            sleep(0.5)
-            self.isNoMainPage_do()
+        for i in range(4):
+            pos = exists_any([
+                Template(r"tpl1567577528299.png", record_pos=(0.0, 0.919), resolution=(1080, 2248)),
+                Template(r"tpl1567667454466.png", record_pos=(0.005, 0.92), resolution=(1080, 2248)),
+                Template(r"tpl1597905990964.png", record_pos=(0.002, 0.923), resolution=(1080, 2280)),
+                Template(r"tpl1567589340484.png", record_pos=(-0.001, 0.923), resolution=(1080, 2248)),
+                Template(r"tpl1567589388744.png", record_pos=(-0.001, 0.924), resolution=(1080, 2248))
+            ])
+            if (pos == False):
+                assert_equal(True, False, "goToKitchen() 厨房按钮未找到.")
+                return
+            for i in range(0, 10):
+                touch(pos)
+                self.scenes = 'Kitchen'
+                sleep(0.5)
+                self.isNoMainPage_do()
+                self.check_Banner_Exists()
 
     # 前往浴室
     def goToBathroom(self):
@@ -668,7 +691,7 @@ class MyTalkingTom(object):
             return
 
 
-    def main(self):
+    def first_open(self):
         '''主程序逻辑'''
         self.stop_app()
         self.clear_app()
@@ -681,8 +704,12 @@ class MyTalkingTom(object):
         # 跳过新手教程
         self.skip_beginner_guide()
         # self.beginner_guide()
-        # 前往客厅
-        self.goToLivingroom()
+
+        self.stop_app()
+        self.start_app()
+        self.isSplashExists()
+
+
 
 
 if __name__ == '__main__':
@@ -690,6 +717,8 @@ if __name__ == '__main__':
     # MTT.check_banner()
     # MTT.start_app()
     # MTT.main()
-    # MTT.check_Splash_Exists(Ordinary=False)
+    # MTT.check_Splash_Exists()
     # MTT.check_Banner_Exists()
-    MTT.check_Video_Exists()
+    MTT.first_open()
+    MTT.goToLivingroom()
+    MTT.goToKitchen()

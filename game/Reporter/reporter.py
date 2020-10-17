@@ -16,12 +16,12 @@ class Reporter_excel(object):
 
 
 
-    def read_excel(self):
-        wb = openpyxl.load_workbook(self.template_path)
-        sheet = wb[self.title]
-
-        data = sheet['A1'].value
-        print(data)
+    # def read_excel(self):
+    #     wb = openpyxl.load_workbook(self.template_path)
+    #     sheet = wb[self.title]
+    #
+    #     data = sheet['A1'].value
+    #     print(data)
 
     def write_excel(self, cell=None, data=None):
         if self.isFirstOpen == True:

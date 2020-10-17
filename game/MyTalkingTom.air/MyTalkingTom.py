@@ -129,7 +129,6 @@ class MyTalkingTom(object):
 
         return channel_d[channel]
 
-
     def init_imglist(self, Point=None):
         self.nativeBanner = [
             Template(r"tpl1569480707179.png", record_pos=(-0.306, -0.9), resolution=(1080, 2244)),
@@ -162,6 +161,7 @@ class MyTalkingTom(object):
             Template(r"tpl1567911842071.png", record_pos=(0.031, 0.77), resolution=(1080, 1920))
         ]
 
+
     '''==================== 检测banner部分START ===================='''
     # 检测普通banner
     def check_OrdinaryBanner_Exists(self, scenes):
@@ -172,12 +172,12 @@ class MyTalkingTom(object):
         #     print("{}渠道无普通banner".format(self.channel))
         #     return False
 
-        po = poco_dict['banner_p']
+        po = exists_any(poco_dict['banner_p'])
         if (po == False):
             return False
         self.Reporter_w.write_excel(scenes['banner_p'], self.reporter_msg)
         self.snapshot_mag()
-        po_close = poco_dict['banner_p_close']
+        po_close = exists_any(poco_dict['banner_p_close'])
         if (po_close != False):
             po_close.click()
         return True
@@ -201,7 +201,7 @@ class MyTalkingTom(object):
         return True
 
     # 检测banner
-    def check_banner_Exists(self):
+    def check_Banner_Exists(self):
         '''检测banner'''
         print("【开始检测banner】")
         scenes = self.get_Scenes(self.scenes)
@@ -219,14 +219,10 @@ class MyTalkingTom(object):
             else:
                 self.check_NativeBanner_Exists(scenes)
 
-
-
     '''==================== 检测banner部分END ===================='''
 
 
-
-
-    '''==================== 检测开屏部分START ===================='''
+    '''==================== 检测开屏广告部分START ===================='''
     # 检测普通开屏
     def check_OrdinarySplash_Exists(self):
         '''检测普通开屏是否存在'''
@@ -286,12 +282,10 @@ class MyTalkingTom(object):
                 self.start_app()
                 NativeSplash = self.check_NativeSplash_Exists()
 
-    '''==================== 检测开屏部分END ===================='''
+    '''==================== 检测开屏广告部分END ===================='''
 
 
-
-
-    '''==================== 检测插屏部分START ===================='''
+    '''==================== 检测插屏广告部分START ===================='''
     # 检测普通插屏
     def check_OrdinaryInterstitial_Exists(self, scenes):
         '''检测普通插屏'''
@@ -302,12 +296,12 @@ class MyTalkingTom(object):
             print("{}渠道无普通插屏".format(self.channel))
             return False
 
-        po = poco_dict['interstitial_p']
+        po = exists_any(poco_dict['interstitial_p'])
         if (po == False):
             return False
         self.Reporter_w.write_excel(scenes['interstitial_p'], self.reporter_msg)
         self.snapshot_mag()
-        po_close = poco_dict['interstitial_p_close']
+        po_close = exists_any(poco_dict['interstitial_p_close'])
         if po_close != False:
             po_close.click()
         else:
@@ -344,12 +338,12 @@ class MyTalkingTom(object):
             print("{}渠道无视频插屏".format(self.channel))
             return False
 
-        po = poco_dict['interstitial_video']
+        po = exists_any(poco_dict['interstitial_video'])
         if (po == False):
             return False
         self.Reporter_w.write_excel(scenes['interstitial_v'], self.reporter_msg)
         self.snapshot_mag()
-        po_close = poco_dict['interstitial_video_close']
+        po_close = exists_any(poco_dict['interstitial_video_close'])
         if (po_close == False):
             keyevent('BACK')
         else:
@@ -359,6 +353,7 @@ class MyTalkingTom(object):
     # 检测插屏广告
     def check_Interstitial_Exists(self):
         '''检测插屏'''
+        print("【开始检测插屏广告】")
         scenes = self.get_Scenes(self.scenes)
 
         inter_p = self.check_OrdinaryInterstitial_Exists(scenes)
@@ -369,8 +364,32 @@ class MyTalkingTom(object):
             return False
         return True
 
-    '''==================== 检测插屏部分END ===================='''
+    '''==================== 检测插屏广告部分END ===================='''
 
+
+    '''==================== 检测视频广告部分START ===================='''
+    # 检测视频广告
+    def check_Video_Exists(self):
+        '''检测视频广告'''
+        print('【开始检测视频广告】')
+        poco_dict = self.get_channel(channel=self.channel)
+        scenes = self.get_Scenes(self.scenes)
+        po = exists_any(poco_dict['video'])
+        if (po == False):
+            return False
+        self.Reporter_w.write_excel(scenes['video'], self.reporter_msg)
+        print("检测到视频广告")
+        self.snapshot_mag()
+        sleep(30)
+        po_close = exists_any(poco_dict['video_close'])
+        po_close_Button = poco_dict['video_close']
+        if (po_close == False):
+            keyevent("BACK")
+        else:
+            po_close_Button.click()
+        return True
+
+    '''==================== 检测视频广告部分END ===================='''
 
     # 截图
     def snapshot_mag(self):
@@ -379,7 +398,7 @@ class MyTalkingTom(object):
         path = self.mag_path + '//{}.png'.format(self.mag_num)
         snapshot(filename=path)
 
-
+    '''==================== 游戏基础操作 ===================='''
     # 游戏基础操作
     def start_app(self):
         start_app(self.AppID)
@@ -388,10 +407,12 @@ class MyTalkingTom(object):
 
     def stop_app(self):
         stop_app(self.AppID)
+        print('正在关闭游戏...')
         sleep(5)
 
     def clear_app(self):
         clear_app(self.AppID)
+        print('正在清除数据...')
         sleep(5)
 
     def wake_phone(self):
@@ -432,7 +453,6 @@ class MyTalkingTom(object):
     # 跳过新手礼包
     def skip_beginner_gift(self):
         '''跳过新手礼包'''
-        sleep(3)
         pos = exists_any([
             Template(r"tpl1567506478562.png", record_pos=(0.33, 0.508), resolution=(1080, 2248)),
             Template(r"tpl1602323710044.png", record_pos=(-0.079, -0.444), resolution=(1200, 2640))
@@ -445,7 +465,6 @@ class MyTalkingTom(object):
     # 跳过每日挑战
     def skip_daily_challenge(self):
         '''跳过每日挑战'''
-        sleep(3)
         pos = exists(Template(r"tpl1568704252875.png", record_pos=(0.004, -0.448), resolution=(1080, 1920)))
         if (pos == False):
             return
@@ -454,8 +473,7 @@ class MyTalkingTom(object):
     # 跳过每日优惠
     def skip_daily_discount(self):
         '''跳过每日优惠'''
-        sleep(3)
-        pos = exists(Template(r"tpl1597912633490.png", record_pos=(0.006, -0.286), resolution=(1080, 2340)))
+        pos = exists_any(Template(r"tpl1597912633490.png", record_pos=(0.006, -0.286), resolution=(1080, 2340)))
         if (pos == False):
             return
         keyevent("BACK")
@@ -547,7 +565,7 @@ class MyTalkingTom(object):
                 self.skip_daily_challenge()
                 if (self.check_isMainPage() == False):
                     # TODO：检测插屏广告视频广告
-                    pass
+                    self.check_Interstitial_Exists()
                     if (self.check_isMainPage() == False):
                         keyevent("BACK")
                         if (self.check_isMainPage() == False):
@@ -650,8 +668,6 @@ class MyTalkingTom(object):
             return
 
 
-
-
     def main(self):
         '''主程序逻辑'''
         self.stop_app()
@@ -669,16 +685,11 @@ class MyTalkingTom(object):
         self.goToLivingroom()
 
 
-
-
-
-
-
-
 if __name__ == '__main__':
     MTT = MyTalkingTom()
     # MTT.check_banner()
     # MTT.start_app()
     # MTT.main()
     # MTT.check_Splash_Exists(Ordinary=False)
-    MTT.check_VideoInterstitial_Exists()
+    # MTT.check_Banner_Exists()
+    MTT.check_Video_Exists()

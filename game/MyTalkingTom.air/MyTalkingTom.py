@@ -55,6 +55,7 @@ class MyTalkingTom(object):
         }
 
         self.vivo = {
+
             'banner_p': self.poco(nameMatches='(.*)id/n1_t2_img'),
             'banner_p_close': self.poco(nameMatches='(.*)id/n1_t2_img'),
             'interstitial_p': self.poco(nameMatches='(.*)id/n1_t2_img'),
@@ -551,16 +552,16 @@ class MyTalkingTom(object):
     def check_isMainPage(self):
         '''检测是否在主界面'''
         sleep(3)
-
         pos = exists_any([
             Template(r"tpl1570517004453.png", record_pos=(0.302, 0.055), resolution=(1080, 2280)), # 客厅
             Template(r"tpl1568259166153.png", record_pos=(-0.297, -0.195), resolution=(1080, 1920)), # 厨房
-            Template(r"tpl1568259303064.png", record_pos=(-0.113, -0.244), resolution=(1080, 1920)), # 浴室
+            Template(r"tpl1568259303064.png", record_pos=(-0.113, -0.244), resolution=(1080, 1920), threshold=0.8), # 浴室
             Template(r"tpl1597907023319.png", record_pos=(-0.03, -0.4), resolution=(1080, 2280))  # 卧室
         ])
-        if (pos != False):
-            return True
-        return False
+        # print(pos)
+        if (pos == False):
+            return False
+        return True
 
     # 操作界面不主界面时应该执行的操作
     def isNoMainPage_do(self):
@@ -602,13 +603,14 @@ class MyTalkingTom(object):
                 Template(r"tpl1596538199151.png", record_pos=(-0.194, 0.948), resolution=(1080, 2340))
             ])
             if (pos == False):
-                assert_equal(True, False, "goToLivingroom() 客厅按钮未找到.")
+                # assert_equal(True, False, "goToLivingroom() 客厅按钮未找到.")
+                print("客厅按钮未找到")
                 self.isNoMainPage_do()
             for j in range(0, 5):
                 touch(pos)
                 self.scenes = 'Livingroom'
                 sleep(0.5)
-                self.isNoMainPage_do()
+                # self.isNoMainPage_do()
                 self.isBannerExists()
 
     # 前往厨房
@@ -623,14 +625,15 @@ class MyTalkingTom(object):
                 Template(r"tpl1567589388744.png", record_pos=(-0.001, 0.924), resolution=(1080, 2248))
             ])
             if (pos == False):
-                assert_equal(True, False, "goToKitchen() 厨房按钮未找到.")
-                return
+                # assert_equal(True, False, "goToKitchen() 厨房按钮未找到.")
+                self.isNoMainPage_do()
             for i in range(0, 10):
                 touch(pos)
                 self.scenes = 'Kitchen'
                 sleep(0.5)
-                self.isNoMainPage_do()
-                self.check_Banner_Exists()
+                # self.isNoMainPage_do()
+                self.isBannerExists()
+
 
     # 前往浴室
     def goToBathroom(self):
@@ -638,16 +641,15 @@ class MyTalkingTom(object):
         pos = exists_any([
             Template(r"tpl1567506551693.png", record_pos=(0.196, 0.919), resolution=(1080, 2248)),
             Template(r"tpl1567664748415.png", record_pos=(0.197, 0.92), resolution=(1080, 2248)),
-            Template(r"tpl1597906407997.png", record_pos=(0.197, 0.924), resolution=(1080, 2280)),
-            Template(r"tpl1597906451619.png", record_pos=(0.2, 0.931), resolution=(1080, 2280)),
-            Template(r"tpl1597906510673.png", record_pos=(0.206, 0.928), resolution=(1080, 2280))
         ])
         if (pos == False):
-            assert_equal(True, False, "goToBathroom() 测试按钮未找到.")
-            return
+            # assert_equal(True, False, "goToBathroom() 测试按钮未找到.")
+            # return
+            self.isNoMainPage_do()
         for i in range(0, 10):
             touch(pos)
-            self.isNoMainPage_do()
+            self.scenes = 'Bathroom'
+            self.isBannerExists()
 
     # 前往卧室
     def goToBedroom(self):
@@ -658,11 +660,14 @@ class MyTalkingTom(object):
             Template(r"tpl1567589372396.png", record_pos=(0.397, 0.919), resolution=(1080, 2248))
         ])
         if (pos == False):
-            assert_equal(True, False, "goToBedroom() 卧室按钮未找到.")
-            return
+            # assert_equal(True, False, "goToBedroom() 卧室按钮未找到.")
+            # return
+            self.isNoMainPage_do()
+
         for i in range(0, 10):
             touch(pos)
-            self.isNoMainPage_do()
+            self.scenes = 'Bedroom'
+            self.isBannerExists()
 
     # 返回主界面
     def backToMain(self):
@@ -705,9 +710,6 @@ class MyTalkingTom(object):
         self.skip_beginner_guide()
         # self.beginner_guide()
 
-        self.stop_app()
-        self.start_app()
-        self.isSplashExists()
 
 
 
@@ -722,3 +724,4 @@ if __name__ == '__main__':
     MTT.first_open()
     MTT.goToLivingroom()
     MTT.goToKitchen()
+    # print(MTT.check_isMainPage())

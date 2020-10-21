@@ -16,11 +16,186 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc04b1e8-aa05-4b1a-81b3-6e49651614da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/tpl1602931632398.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/MTT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567501638079.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567501771358.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567501786370.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503757543.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503778397.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503796792.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503827541.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503851190.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503873365.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503882284.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503897930.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567503923842.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567504064721.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567504157962.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567504346592.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567504671526.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567505582092.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567506283133.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567506478562.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567506495302.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567506551693.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567566946253.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567566961287.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567566999371.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567122202.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567396391.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567422526.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567460230.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567480308.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567491976.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567606065.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567567631185.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568552138.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568560247.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568568392.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568575420.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568582932.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568590180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568600042.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568607725.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568615766.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568625266.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568632782.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568640140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568648180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568657400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567568663741.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567569005154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567569220185.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567569523059.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567569535716.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577009407.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577145301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577155616.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577162271.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577172516.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577180097.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577188547.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577198689.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567577528299.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567578931672.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567578946168.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567578955683.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567578969466.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567578987185.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579003401.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579024583.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579043716.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579062359.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579075533.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579095148.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579104679.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579117927.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579131413.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567579140011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567589317467.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567589340484.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567589362374.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567589372396.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567589388744.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567589396053.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567592384512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567592656112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567664748415.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567667416052.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567667429838.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567667454466.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1567911842071.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568187767836.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568188097403.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568188109861.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568188129389.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568189218352.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568189325391.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568189505139.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568189789485.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568189984064.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568190300263.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568190613351.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568190621163.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568190636606.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568190908217.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568193092559.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568193100009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568193816032.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568195750810.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568203032046.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568203237856.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568254696587.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568255744647.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568255751963.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568256211708.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568256218734.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568259166153.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568259303064.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568259388088.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568704086495.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568704252875.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568792874906.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568792945340.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568793082428.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568793497402.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568794142300.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568794239667.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568796220494.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568797914108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568797924855.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568798608788.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568860985743.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568861089586.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568861403438.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568861410923.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1568877532465.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569480707179.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569480855531.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569480920892.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569483684083.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569548718429.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569548730374.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569548743261.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569579773446.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569579851173.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569580148269.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569580190213.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569580210690.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569660963604.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569661014572.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569661014572_screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569661033837.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569661033837_screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569826643419.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569829064154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1569829091713.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1570517004453.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1570604202904.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1571146159552.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1596538199151.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1597747615936.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1597907023319.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1597912633490.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1602323710044.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1602324183519.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1602492999405.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1602572841304.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1602754161372.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Game/MTT.air/tpl1602931632398.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Reporter/mag/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Reporter/mag/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Reporter/mag/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Reporter/mag/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Reporter/mag/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Reporter/mag/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/Reporter/mag/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/apkinfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AD/packagename.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/Reporter/mag/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/game/Reporter/mag/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/Reporter/reporter.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/game/Reporter/reporter.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +225,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/game/MyTalkingTom.air" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AD" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,15 +235,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\Desktop\MTT_mini\game\MyTalkingTom.air" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Desktop\MTT_mini\AD\Game\MTT.air" />
+      <recent name="D:\Users\Desktop\MTT_mini\AD\Game" />
       <recent name="D:\Users\Desktop\MTT_mini\game" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Desktop\MTT_mini\AD" />
+      <recent name="D:\Users\Desktop\MTT_mini\AD\Game" />
+      <recent name="D:\Users\Desktop\MTT_mini\game\MyTalkingTom.air" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.MyTalkingTom">
-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.MTT (1)">
+    <configuration name="MTT (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="JinkeTest_MTT" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -76,12 +255,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Main.air" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AD/Game/MTT.air" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.air/Main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AD/Game/MTT.air/MTT.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MTT" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JinkeTest_MTT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AD/Game" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\Users\Desktop\MTT_mini\AD\Game\MTT.air\MTT.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,28 +305,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game/MyTalkingTom.air/MyTalkingTom.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="read_xml" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="JinkeTest_MTT" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../.." />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../read_xml.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,11 +359,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MTT (1)" />
+        <item itemvalue="Python.MTT" />
         <item itemvalue="Python.MyTalkingTom" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.reporter" />
-        <item itemvalue="Python.Main" />
-        <item itemvalue="Python.read_xml" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +385,9 @@
       <workItem from="1602490424857" duration="34141000" />
       <workItem from="1602658749395" duration="6769000" />
       <workItem from="1602666207166" duration="47246000" />
-      <workItem from="1602905824343" duration="17289000" />
+      <workItem from="1602905824343" duration="17903000" />
+      <workItem from="1603098988042" duration="648000" />
+      <workItem from="1603265329998" duration="11956000" />
     </task>
     <servers />
   </component>
@@ -237,22 +418,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602764346594" />
-    <state width="1877" height="161" key="GridCell.Tab.0.bottom" timestamp="1602931328324">
+    <state width="1568" height="302" key="GridCell.Tab.0.bottom" timestamp="1603276188449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602931328324" />
-    <state width="1877" height="161" key="GridCell.Tab.0.center" timestamp="1602931328324">
+    <state width="1568" height="302" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1603276188449" />
+    <state width="1568" height="302" key="GridCell.Tab.0.center" timestamp="1603276188449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602931328324" />
-    <state width="1877" height="161" key="GridCell.Tab.0.left" timestamp="1602931328324">
+    <state width="1568" height="302" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1603276188449" />
+    <state width="1568" height="302" key="GridCell.Tab.0.left" timestamp="1603276188448">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602931328324" />
-    <state width="1877" height="161" key="GridCell.Tab.0.right" timestamp="1602931328324">
+    <state width="1568" height="302" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1603276188448" />
+    <state width="1568" height="302" key="GridCell.Tab.0.right" timestamp="1603276188449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602931328324" />
+    <state width="1568" height="302" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1603276188449" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1597743974429">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -261,16 +442,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="753" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1602926306927" />
-    <state x="628" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1602923698901">
+    <state x="628" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1603274843626">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="628" y="247" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602923698901" />
+    <state x="628" y="247" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1603274843626" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MTT_mini$Main.coverage" NAME="Main Coverage Results" MODIFIED="1602495071014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main.air" />
     <SUITE FILE_PATH="coverage/MTT_mini$test.coverage" NAME="test Coverage Results" MODIFIED="1602756881927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
     <SUITE FILE_PATH="coverage/JinkeTest_MTT$apkinfo.coverage" NAME="apkinfo Coverage Results" MODIFIED="1597370841262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../.." />
-    <SUITE FILE_PATH="coverage/MTT_mini$MyTalkingTom.coverage" NAME="MyTalkingTom Coverage Results" MODIFIED="1602929122936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game/MyTalkingTom.air" />
+    <SUITE FILE_PATH="coverage/MTT_mini$MTT.coverage" NAME="MTT Coverage Results" MODIFIED="1603273089114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AD/Game" />
+    <SUITE FILE_PATH="coverage/MTT_mini$MyTalkingTom.coverage" NAME="MyTalkingTom Coverage Results" MODIFIED="1603268981934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game/MyTalkingTom.air" />
+    <SUITE FILE_PATH="coverage/MTT_mini$MTT__1_.coverage" NAME="MTT (1) Coverage Results" MODIFIED="1603276097136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AD/Game/MTT.air" />
     <SUITE FILE_PATH="coverage/MTT_mini$reporter.coverage" NAME="reporter Coverage Results" MODIFIED="1602748807604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game/Reporter" />
     <SUITE FILE_PATH="coverage/JinkeTest_MTT$read_xml.coverage" NAME="read_xml Coverage Results" MODIFIED="1597740941082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../.." />
   </component>
